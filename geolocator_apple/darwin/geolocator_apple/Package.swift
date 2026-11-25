@@ -25,7 +25,8 @@ let package = Package(
                 .headerSearchPath("include/geolocator_apple"),
                 // Fork: the app asks only for When In Use, so the Always request is compiled out, as the app's
                 // Podfile did under CocoaPods with BYPASS_PERMISSION_LOCATION_ALWAYS=1. Without it, App Store
-                // Connect asks for NSLocationAlwaysAndWhenInUseUsageDescription.
+                // Connect asks for NSLocationAlwaysAndWhenInUseUsageDescription. Why a fork rather than the
+                // environment variable newer versions read: README.md, "About this fork".
                 .define("BYPASS_PERMISSION_LOCATION_ALWAYS", to: "1")
             ]
         )
