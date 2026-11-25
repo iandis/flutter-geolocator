@@ -1,3 +1,7 @@
+## 2.3.14 (fork: Always request compiled out)
+
+* Under Swift Package Manager, defines `BYPASS_PERMISSION_LOCATION_ALWAYS=1`, so the request for permission to update location in the background is compiled out, as the `Podfile` flag does under CocoaPods.
+
 ## 2.3.14
 
 * Updates `flutter_lints` to version 6.0.0.

@@ -22,7 +22,11 @@ let package = Package(
             ],
             publicHeadersPath: "include/geolocator_apple",
             cSettings: [
-                .headerSearchPath("include/geolocator_apple")
+                .headerSearchPath("include/geolocator_apple"),
+                // Fork: the app asks only for When In Use, so the Always request is compiled out, as the app's
+                // Podfile did under CocoaPods with BYPASS_PERMISSION_LOCATION_ALWAYS=1. Without it, App Store
+                // Connect asks for NSLocationAlwaysAndWhenInUseUsageDescription.
+                .define("BYPASS_PERMISSION_LOCATION_ALWAYS", to: "1")
             ]
         )
     ]
